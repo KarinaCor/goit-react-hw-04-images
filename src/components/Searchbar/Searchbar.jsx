@@ -1,21 +1,28 @@
 
 import { useState } from 'react';
 import * as SC from '../Searchbar/Searchbar.styled';
+import { toast } from 'react-toastify';
 
 
-export const SearchBar = () => {
-  const [value, setValue] = useState('');
+export const SearchBar = ({onSubmit}) => {
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleQueryChange = ({ currentTarget: { value } }) => {
-    setValue(value);
+    setSearchQuery(value.toLowerCase());
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    handleSearch(value.trim());
+    const trimSearchQuery = searchQuery.trim();
 
-    setValue('');
+    if (trimSearchQuery === '') {
+      toast.info('Please, enter search word!');
+      return;
+    }
 
+    onSubmit(trimSearchQuery);
+    setSearchQuery('');
+  };
     return (
       <SC.SearchBarHeader>
         <SC.Form onSubmit={handleSubmit}>
@@ -34,5 +41,5 @@ export const SearchBar = () => {
         </SC.Form>
       </SC.SearchBarHeader>
     );
-  };
+  
 };

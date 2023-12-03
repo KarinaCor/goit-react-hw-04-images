@@ -3,11 +3,13 @@ import * as SC from '../ImageGalleryItem/ImageGalleryItem.styled';
 
 import { Modal } from '../Modal/Modal';
 
-export const ImageGalleryItem = ({toogleModal,webformatURL,tags,largeImageURL}) => {
-  const [isModalOpen, setisModalOpen] = useState(false);
+export const ImageGalleryItem = ({
+  galleryItem: { webformatURL, largeImageURL, tags },
+}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  toogleModal = () => {
-    setisModalOpen(({ isModalOpen }) => ({ isModalOpen: !isModalOpen }));
+  const toogleModal = () => {
+    setIsModalOpen(isModalOpen => !isModalOpen);
   };
 
   return (

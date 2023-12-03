@@ -4,7 +4,7 @@ import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem'
 export const ImageGallery = ({galleryItems}) => {
 return (
     <SC.List>  
-   {galleryItems.map(galleryItem =>{
+   {galleryItems.map(galleryItem => {
     return(
         <ImageGalleryItem key={galleryItem.id} galleryItem = {galleryItem} />
     )

@@ -14,7 +14,7 @@ export const Modal = ({largeImageURL,alt,onCloseModal}) => {
     document.body.style.overflow = 'hidden';
 
     return () => {
-      window.remove.EventListener('keydown', handleKeyDown);
+      window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'auto';
     };
   }, [onCloseModal]);

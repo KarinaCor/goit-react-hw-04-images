@@ -1,8 +1,8 @@
 import * as SC from '../Button/Button.styled'
 
-export const Button = ({onLoadMore}) => {
+export const Button = ({onClick}) => {
     return(
-<SC.Button type="button" onClick={onLoadMore}>
+<SC.Button type="button" onClick={onClick}>
        Load More 
     </SC.Button>
     )

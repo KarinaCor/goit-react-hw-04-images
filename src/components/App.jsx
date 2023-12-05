@@ -59,7 +59,7 @@ export const App = () => {
         }
 
         if (page === 1) {
-          toast.success(`Hooray! We found ${postApiService.hits} images.`);
+          toast.success(`Hooray! We found ${totalHits} images.`);
         }
 
       })

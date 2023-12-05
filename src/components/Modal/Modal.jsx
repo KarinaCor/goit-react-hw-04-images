@@ -20,7 +20,7 @@ export const Modal = ({largeImageURL,alt,onCloseModal}) => {
   }, [onCloseModal]);
 
   const handleOverlayClick = event => {
-    if (event.target === this.event.currentTarget) {
+    if (event.target === event.currentTarget) {
       onCloseModal();
     }
   };
